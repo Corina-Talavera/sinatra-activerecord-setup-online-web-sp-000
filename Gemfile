@@ -3,7 +3,9 @@ gem 'sinatra'
   gem 'sinatra-activerecord'
   gem 'thin'
   gem 'require_all'
- 
+ configure :development do
+  set :database, 'sqlite3:db/database.db'
+end
   group :development do
     gem 'shotgun'
     gem 'pry'
